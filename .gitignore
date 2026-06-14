@@ -1,0 +1,8 @@
+.env
+scrape.log
+hotels_raw.csv
+hotels_clean.csv
+cities_geocoded.csv
+weather_forecast_raw.csv
+debug_pages
+__pycache__

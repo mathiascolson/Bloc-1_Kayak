@@ -5,7 +5,7 @@
 Kayak est un moteur de recherche de voyages permettant aux utilisateurs de comparer des destinations, des hôtels et des prix.  
 Dans ce projet, l'objectif est de construire un pipeline de données permettant de recommander des destinations françaises à partir de critères météorologiques, puis d'associer à ces destinations des hôtels récupérés sur Booking.
 
-Le projet répond à une problématique métier simple : identifier les destinations les plus favorables pour une période de voyage donnée, puis proposer les meilleurs hôtels disponibles dans ces zones.
+Le projet répond à une problématique simple : identifier les destinations les plus favorables pour une période de voyage donnée, puis proposer les meilleurs hôtels disponibles dans ces zones.
 
 ## 2. Objectifs du projet
 
@@ -25,11 +25,11 @@ Le pipeline permet de :
 
 Les données utilisées proviennent de trois sources principales :
 
-| Source | Données collectées |
-|---|---|
-| Nominatim | Latitude et longitude des villes |
-| OpenWeather One Call API 4.0 | Prévisions météo journalières |
-| Booking.com | Informations hôtels, prix, notes, coordonnées GPS |
+| Source                       | Données collectées                                  |
+|---                           |---                                                  |
+| Nominatim                    | Latitude et longitude des villes                    |
+| OpenWeather One Call API 4.0 | Prévisions météo journalières                       |
+| Booking.com                  | Informations hôtels, prix, notes, coordonnées GPS   |
 
 Les dates de voyage sont paramétrées dans le fichier `.env` avec :
 
@@ -61,13 +61,13 @@ Le pipeline suit les étapes suivantes :
 
 ## 5. Fichiers principaux
 
-| Fichier | Rôle |
-|---|---|
-| `Bloc-2_Project_Kayak_V2.ipynb` | Notebook principal du projet |
-| `weather_geocoding_V4.py` | Géolocalisation et récupération météo |
-| `scrape_booking_V3.py` | Scraping des hôtels Booking |
-| `cities.py` | Liste centralisée des 35 destinations |
-| `.env` | Variables d'environnement et secrets locaux |
+| Fichier                         | Rôle                                        |
+|---                              |---                                          |
+| `Bloc-2_Project_Kayak_V2.ipynb` | Notebook principal du projet                |
+| `weather_geocoding_V4.py`       | Géolocalisation et récupération météo       |
+| `scrape_booking_V3.py`          | Scraping des hôtels Booking                 |
+| `cities.py`                     | Liste centralisée des 35 destinations       |
+| `.env`                          | Variables d'environnement et secrets locaux |
 
 ## 6. Stockage S3
 
@@ -139,12 +139,12 @@ Un score météo est calculé pour classer les destinations.
 
 Le score combine quatre critères :
 
-| Critère | Pondération |
-|---|---:|
-| Pluie | 40 % |
-| Température | 30 % |
-| Couverture nuageuse | 20 % |
-| Vent | 10 % |
+| Critère             | Pondération |
+|---                  |---          |
+| Pluie               | 40 %        |
+| Température         | 30 %        |
+| Couverture nuageuse | 20 %        |
+| Vent                | 10 %        |
 
 Si la probabilité moyenne de pluie est disponible pour toutes les villes, elle est utilisée.  
 Sinon, le score pluie est calculé à partir du volume total de pluie prévu sur la période.

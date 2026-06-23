@@ -4,5 +4,6 @@ hotels_raw.csv
 hotels_clean.csv
 cities_geocoded.csv
 weather_forecast_raw.csv
+Narratif_presentation.docx
 debug_pages
 __pycache__
